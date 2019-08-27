@@ -1,0 +1,17 @@
+1.scene场景
+var scene = new THREE.Scene();
+2.camera相机
+有两种相机 
+PerspectiveCamera透视相机 物体会随视野变得越来越小，相机有四个参数 fov锥视角角度范围在0~179度
+aspect屏幕宽高比例，创建一个同比例的矩形 window.innerWidth / window.innerHeight
+near参数定义近剪裁平面。 靠近相机的物体比.near不可见
+far参数定义远剪裁平面。 远离相机的物体将不会显示
+
+OrthographicCamera正交投影相机 物体不会随视野变小
+
+
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+3.renderer渲染
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
